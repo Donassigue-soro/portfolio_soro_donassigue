@@ -1,0 +1,22 @@
+/* ===== Base "Data / Tech Premium" : dark mode, Inter + JetBrains Mono, accents #38BDF8 / #8B5CF6 ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+html, body, .stApp, [data-testid="stMarkdownContainer"] { font-family: 'Inter', system-ui, sans-serif; }
+.stApp { background: radial-gradient(1200px 500px at 85% -10%, rgba(139,92,246,.12), transparent 60%),
+                     radial-gradient(900px 400px at 0% 0%, rgba(56,189,248,.08), transparent 60%), #0B0F14; }
+.block-container { max-width: 1100px; padding-top: 1.5rem; padding-bottom: 3rem; }
+#MainMenu, footer[data-testid="stFooter"] { visibility: hidden; }
+header[data-testid="stHeader"] { background: rgba(11,15,20,.75); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(148,163,184,.12); }
+
+/* Boutons */
+.stButton > button, .stDownloadButton > button, .stLinkButton > a {
+  border-radius: 10px; border: 1px solid rgba(148,163,184,.25); font-weight: 600; transition: transform .15s ease, border-color .15s ease; }
+.stButton > button:hover, .stDownloadButton > button:hover, .stLinkButton > a:hover { border-color: #38BDF8; transform: translateY(-1px); }
+.stButton > button[kind="primary"], .stDownloadButton > button[kind="primary"] {
+  background: linear-gradient(90deg, #38BDF8, #8B5CF6); border: none; color: #0B0F14; }
+
+/* Champs de formulaire */
+.stTextInput input, .stTextArea textarea { background: #111827; border-radius: 10px; }
+[data-testid="stForm"] { border: 1px solid rgba(148,163,184,.18); border-radius: 14px; background: #111827; }
+a { color: #38BDF8; }
+code, pre { font-family: 'JetBrains Mono', monospace; }

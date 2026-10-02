@@ -1,0 +1,91 @@
+/* ===== Composants du portfolio (préfixe pf-) — à ajouter À LA SUITE de styles/custom.css ===== */
+:root {
+  --pf-bg: #0B0F14; --pf-bg2: #111827; --pf-card: #151D2A;
+  --pf-text: #F8FAFC; --pf-muted: #94A3B8;
+  --pf-accent: #38BDF8; --pf-accent2: #8B5CF6;
+  --pf-border: rgba(148, 163, 184, .18);
+}
+.pf-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+.pf-muted { color: var(--pf-muted); } .pf-small { font-size: .8rem; }
+.pf-body, .pf-card-desc { color: var(--pf-muted); line-height: 1.65; }
+.pf-label { color: var(--pf-muted); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; margin: 1rem 0 .4rem; }
+.pf-list { color: var(--pf-text); padding-left: 1.1rem; margin: 0; line-height: 1.8; }
+.pf-list li::marker { color: var(--pf-accent); }
+
+/* Chips techno */
+.pf-chips { display: flex; flex-wrap: wrap; gap: .4rem; margin: .4rem 0 .6rem; }
+.pf-chip { font-family: 'JetBrains Mono', monospace; font-size: .74rem; padding: .22rem .6rem; border-radius: 999px;
+  color: var(--pf-accent); background: rgba(56, 189, 248, .08); border: 1px solid rgba(56, 189, 248, .25); }
+.pf-chips--hero .pf-chip { font-size: .85rem; padding: .3rem .8rem; }
+
+/* Hero */
+.pf-hero { padding: 3.5rem 0 1.5rem; }
+.pf-kicker { color: var(--pf-accent2); letter-spacing: .2em; font-size: .8rem; }
+.pf-hero-title { font-size: clamp(2rem, 5vw, 3.6rem); font-weight: 800; line-height: 1.08; margin: .4rem 0 1rem;
+  background: linear-gradient(90deg, var(--pf-text) 30%, var(--pf-accent)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.pf-hero-text { max-width: 640px; font-size: 1.15rem; color: var(--pf-muted); line-height: 1.6; }
+
+/* Pipeline */
+.pf-pipeline { display: flex; align-items: stretch; flex-wrap: wrap; gap: .5rem; margin: 1.2rem 0; }
+.pf-step { font-family: 'JetBrains Mono', monospace; font-size: .8rem; padding: .6rem .9rem; border-radius: 10px;
+  background: var(--pf-card); border: 1px solid var(--pf-border); color: var(--pf-text); }
+.pf-arrow { align-self: center; color: var(--pf-accent); }
+.pf-pipeline--compact .pf-step { font-size: .7rem; padding: .4rem .7rem; color: var(--pf-muted); }
+.pf-pipeline--vertical { flex-direction: column; align-items: flex-start; }
+.pf-pipeline--vertical .pf-arrow { transform: rotate(90deg); margin-left: 1rem; }
+@media (max-width: 640px) {
+  .pf-pipeline:not(.pf-pipeline--vertical) { flex-direction: column; align-items: stretch; }
+  .pf-pipeline:not(.pf-pipeline--vertical) .pf-arrow { transform: rotate(90deg); align-self: flex-start; margin-left: 1rem; }
+}
+
+/* Cartes (conteneurs Streamlit à clé pfcard_*) */
+[class*="st-key-pfcard_"] { background: var(--pf-card); border: 1px solid var(--pf-border); border-radius: 14px;
+  padding: 1.1rem; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+[class*="st-key-pfcard_"]:hover { transform: translateY(-3px); border-color: rgba(56, 189, 248, .5); box-shadow: 0 10px 30px rgba(0, 0, 0, .35); }
+.pf-card-visual { height: 110px; border-radius: 10px; display: flex; align-items: center; justify-content: center;
+  color: var(--pf-text); background: linear-gradient(135deg, rgba(56, 189, 248, .25), rgba(139, 92, 246, .25)); margin-bottom: .8rem; }
+.pf-card-cat { color: var(--pf-accent2); font-size: .7rem; letter-spacing: .1em; }
+.pf-card-title { margin: .3rem 0 .5rem; color: var(--pf-text); }
+.pf-card--secondary { opacity: .85; }
+.pf-need { color: var(--pf-text); font-style: italic; border-left: 2px solid var(--pf-accent2); padding-left: .8rem; }
+
+/* Fiche projet */
+.pf-section-title { margin: 2.2rem 0 .8rem; padding-bottom: .4rem; border-bottom: 1px solid var(--pf-border);
+  color: var(--pf-text); font-weight: 700; letter-spacing: .06em; }
+.pf-section-title .pf-mono { color: var(--pf-accent); }
+
+/* Timeline */
+.pf-timeline { border-left: 2px solid var(--pf-border); margin-left: .5rem; padding-left: 1.4rem; }
+.pf-tl-item { position: relative; padding-bottom: 1.4rem; }
+.pf-tl-dot { position: absolute; left: -1.95rem; top: .3rem; width: 12px; height: 12px; border-radius: 50%;
+  background: var(--pf-accent); box-shadow: 0 0 0 4px rgba(56, 189, 248, .15); }
+.pf-tl-label { color: var(--pf-text); font-weight: 600; } .pf-tl-detail { color: var(--pf-muted); font-size: .9rem; }
+
+/* Footer */
+.pf-footer { margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--pf-border); text-align: center; line-height: 1.9; }
+.pf-footer-name { font-weight: 800; letter-spacing: .12em; color: var(--pf-text); }
+.pf-footer-title { color: var(--pf-accent); }
+.pf-footer a { color: var(--pf-accent); text-decoration: none; } .pf-footer a:hover { text-decoration: underline; }
+
+/* Accessibilité : respect de prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) { [class*="st-key-pfcard_"] { transition: none; } [class*="st-key-pfcard_"]:hover { transform: none; } }
+
+/* ===== Pages ===== */
+.pf-page-head { padding: 2rem 0 .5rem; }
+.pf-h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; color: var(--pf-text); margin: .3rem 0 .8rem; }
+.pf-h2 { font-size: 1.4rem; font-weight: 700; color: var(--pf-text); margin: 2.5rem 0 .4rem; }
+.pf-h2::before { content: ""; display: inline-block; width: 4px; height: 1em; margin-right: .6rem; vertical-align: -.12em;
+  border-radius: 2px; background: linear-gradient(var(--pf-accent), var(--pf-accent2)); }
+.pf-highlight { padding: 1.2rem 1.4rem; border-radius: 14px; color: var(--pf-text); line-height: 1.7;
+  background: linear-gradient(135deg, rgba(56,189,248,.08), rgba(139,92,246,.08)); border: 1px solid var(--pf-border); }
+.pf-contact-line { display: flex; gap: .8rem; padding: .55rem 0; border-bottom: 1px solid var(--pf-border); }
+.pf-contact-line a { color: var(--pf-accent); text-decoration: none; }
+.pf-contact-line .pf-mono { color: var(--pf-muted); min-width: 90px; font-size: .8rem; }
+/* Photo de profil */
+.st-key-pf_avatar { display: flex; justify-content: center; }
+.st-key-pf_avatar img { border-radius: 50%; aspect-ratio: 1 / 1; object-fit: cover; border: 2px solid var(--pf-accent);
+  box-shadow: 0 0 0 6px rgba(56,189,248,.12), 0 0 40px rgba(139,92,246,.35); }
+.pf-avatar-fallback { width: 220px; height: 220px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 3rem; color: var(--pf-text); border: 2px solid var(--pf-accent);
+  background: linear-gradient(135deg, rgba(56,189,248,.25), rgba(139,92,246,.25)); }
+[class*="st-key-pfcard_"] img { aspect-ratio: 16 / 9; object-fit: cover; border-radius: 10px; }

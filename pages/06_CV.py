@@ -20,7 +20,7 @@ col_b.link_button("LinkedIn", p.linkedin_url, use_container_width=True)
 col_c.link_button("GitHub", p.github_url, use_container_width=True)
 
 if cv is None:
-    st.info("Le CV n'est pas encore disponible. Ajoutez le fichier `assets/cv/CV_Donassigue_Mathieu_SORO.pdf`.")
+    st.info("Le CV n'est pas encore disponible. Ajoutez le fichier `assets/cv/cv.pdf`.")
 else:
     try:  # st.pdf nécessite streamlit[pdf] (>= 1.49) : navigation et zoom intégrés
         st.pdf(cv, height=800)
